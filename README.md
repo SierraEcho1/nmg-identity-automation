@@ -24,6 +24,19 @@ associated with individual users.
 
 Rather than comparing directory records against payroll records, the tools developed in this project check the domain controller directly to find the last time each account was used.
 
+## Before you start
+
+- Windows Server with the ActiveDirectory PowerShell module
+
+      Import-Module ActiveDirectory
+
+- Rights to modify user objects in the domain
+- An authorising ticket number, in the form NMG-0000
+- A Disabled Users OU at the root of the domain
+- A writable reports folder. Create it if it does not exist:
+
+      New-Item -Path "C:\Reports\Offboarding" -ItemType Directory -Force
+
 ## Tools
 
 ### Find-StaleAccounts.ps1
